@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 17 - Menú Hamburguesa</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <!-- Checkbox oculto (truco CSS) -->
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        
+        <!-- Label que actúa como ícono hamburguesa -->
+        <label for="menu-toggle" class="menu-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+
+        <!-- Logo -->
+        <div class="logo">MyBrand</div>
+
+        <!-- Menú -->
+        <ul class="menu">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">Sobre Nosotros</a></li>
+            <li><a href="#services">Servicios</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#contact">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h1>Menú Hamburguesa con CSS Puro</h1>
+        <p>Este menú usa un checkbox oculto y el selector ~ para funcionar sin JavaScript</p>
+        
+        <section>
+            <h2>Sección 1</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </section>
+
+        <section>
+            <h2>Sección 2</h2>
+            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </section>
+
+        <section>
+            <h2>Sección 3</h2>
+            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Mi Sitio. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

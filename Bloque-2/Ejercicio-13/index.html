@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 13 - Formulario Estilizado</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Ejercicio 13: Formulario Estilizado</h1>
+    <p class="intro">Completa el formulario - observa los estados :focus, :hover y :active</p>
+
+    <form class="formulario">
+        <div class="grupo-form">
+            <label for="nombre">Nombre Completo</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Juan Pérez" required>
+        </div>
+
+        <div class="grupo-form">
+            <label for="email">Correo Electrónico</label>
+            <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+        </div>
+
+        <div class="grupo-form">
+            <label for="asunto">Asunto</label>
+            <input type="text" id="asunto" name="asunto" placeholder="Asunto del mensaje" required>
+        </div>
+
+        <div class="grupo-form">
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" name="mensaje" placeholder="Escribe tu mensaje aquí..." rows="5" required></textarea>
+        </div>
+
+        <div class="grupo-form">
+            <label>
+                <input type="checkbox" name="terminos" required>
+                Acepto los términos y condiciones
+            </label>
+        </div>
+
+        <div class="grupo-form">
+            <label>Tipo de consulta</label>
+            <div class="radio-group">
+                <label>
+                    <input type="radio" name="tipo" value="consulta" required>
+                    Consulta
+                </label>
+                <label>
+                    <input type="radio" name="tipo" value="reclamo" required>
+                    Reclamo
+                </label>
+                <label>
+                    <input type="radio" name="tipo" value="sugerencia" required>
+                    Sugerencia
+                </label>
+            </div>
+        </div>
+
+        <button type="submit" class="btn-enviar">Enviar Mensaje</button>
+        <button type="reset" class="btn-limpiar">Limpiar</button>
+    </form>
+
+    <div class="info">
+        <h3>Interactúa con el formulario para ver:</h3>
+        <ul>
+            <li><strong>:focus</strong> - Borde azul cuando haces clic en los inputs</li>
+            <li><strong>:hover</strong> - Color de fondo al pasar el mouse sobre el botón</li>
+            <li><strong>:active</strong> - Efecto al presionar el botón</li>
+            <li><strong>transition</strong> - Animación suave en los cambios de estado</li>
+        </ul>
+    </div>
+</body>
+</html>

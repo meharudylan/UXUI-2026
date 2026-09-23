@@ -1,0 +1,843 @@
+/* ============================================
+   VARIABLES CSS
+============================================ */
+
+:root {
+
+    --color-primario: #667eea;
+    --color-secundario: #764ba2;
+
+    --color-fondo: #f5f7fb;
+    --color-blanco: #ffffff;
+    --color-texto: #2c3e50;
+    --color-texto-secundario: #7f8c8d;
+
+    --color-exito: #2ecc71;
+    --color-error: #e74c3c;
+
+    --espaciado: 1rem;
+
+    --radio: 10px;
+
+    --sombra:
+        0 4px 15px rgba(0, 0, 0, 0.10);
+
+    --sombra-grande:
+        0 12px 35px rgba(0, 0, 0, 0.15);
+
+    --transicion:
+        all 0.3s ease;
+}
+
+
+/* ============================================
+   RESET
+============================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+
+    background-color: var(--color-fondo);
+
+    color: var(--color-texto);
+
+    line-height: 1.6;
+}
+
+
+/* Evita que la navbar tape las secciones */
+
+section {
+    scroll-margin-top: 90px;
+}
+
+
+/* ============================================
+   HEADER / NAVBAR
+============================================ */
+
+.header {
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+
+    background-color:
+        rgba(255, 255, 255, 0.96);
+
+    box-shadow: var(--sombra);
+
+    backdrop-filter: blur(8px);
+}
+
+
+.navbar {
+
+    max-width: 1400px;
+
+    margin: 0 auto;
+
+    padding: 1rem 2rem;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+
+.logo {
+
+    color: var(--color-primario);
+
+    text-decoration: none;
+
+    font-size: 1.6rem;
+
+    font-weight: bold;
+}
+
+
+.nav-menu {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 2rem;
+
+    list-style: none;
+}
+
+
+.nav-menu a {
+
+    color: var(--color-texto);
+
+    text-decoration: none;
+
+    font-weight: 600;
+
+    transition: var(--transicion);
+}
+
+
+.nav-menu a:hover {
+
+    color: var(--color-primario);
+
+    transform: translateY(-2px);
+}
+
+
+/* ============================================
+   MAIN
+============================================ */
+
+main {
+
+    max-width: 1400px;
+
+    margin: 0 auto;
+}
+
+
+/* ============================================
+   HERO
+============================================ */
+
+.hero {
+
+    min-height: 650px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 6rem 2rem;
+
+    color: white;
+
+    position: relative;
+
+    overflow: hidden;
+
+
+    /*
+       Imagen de fondo + degradado.
+       Si querés usar una imagen propia,
+       reemplazá esta URL.
+    */
+
+    background-image:
+        linear-gradient(
+            rgba(60, 70, 170, 0.80),
+            rgba(90, 45, 140, 0.80)
+        ),
+        url("https://via.placeholder.com/1400x700");
+
+    background-size: cover;
+
+    background-position: center;
+}
+
+
+.hero-contenido {
+
+    max-width: 800px;
+
+    position: relative;
+
+    z-index: 2;
+
+    animation: aparecer 1s ease-out;
+}
+
+
+.hero-etiqueta {
+
+    display: inline-block;
+
+    padding: 0.4rem 1rem;
+
+    margin-bottom: 1rem;
+
+    border-radius: 50px;
+
+    background-color:
+        rgba(255, 255, 255, 0.18);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.35);
+
+    font-size: 0.9rem;
+}
+
+
+.hero h1 {
+
+    font-size: 3.5rem;
+
+    line-height: 1.1;
+
+    margin-bottom: 1.5rem;
+}
+
+
+.hero p {
+
+    font-size: 1.4rem;
+
+    margin-bottom: 2rem;
+
+    opacity: 0.95;
+}
+
+
+/* ============================================
+   BOTÓN CTA
+============================================ */
+
+.btn-cta {
+
+    display: inline-block;
+
+    padding: 1rem 2rem;
+
+    border-radius: var(--radio);
+
+    background-color: white;
+
+    color: var(--color-primario);
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    font-size: 1.1rem;
+
+    transition: var(--transicion);
+}
+
+
+.btn-cta:hover {
+
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+
+/* ============================================
+   ANIMACIÓN
+============================================ */
+
+@keyframes aparecer {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(35px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+}
+
+
+/* ============================================
+   TÍTULOS DE SECCIONES
+============================================ */
+
+.seccion-titulo {
+
+    max-width: 700px;
+
+    margin: 0 auto 3rem;
+
+    text-align: center;
+}
+
+
+.seccion-titulo span {
+
+    color: var(--color-primario);
+
+    font-weight: bold;
+
+    text-transform: uppercase;
+
+    font-size: 0.85rem;
+
+    letter-spacing: 1px;
+}
+
+
+.seccion-titulo h2 {
+
+    font-size: 2.5rem;
+
+    margin: 0.5rem 0 1rem;
+
+    color: var(--color-texto);
+}
+
+
+.seccion-titulo p {
+
+    color: var(--color-texto-secundario);
+
+    font-size: 1.05rem;
+}
+
+
+/* ============================================
+   SERVICIOS - GRID
+============================================ */
+
+.servicios {
+
+    padding: 5rem 2rem;
+}
+
+
+.grid-servicios {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 2rem;
+}
+
+
+.servicio {
+
+    padding: 2rem;
+
+    text-align: center;
+
+    background-color: var(--color-blanco);
+
+    border-radius: var(--radio);
+
+    box-shadow: var(--sombra);
+
+    transition: var(--transicion);
+}
+
+
+.servicio:hover {
+
+    transform: translateY(-8px);
+
+    box-shadow: var(--sombra-grande);
+}
+
+
+.icono {
+
+    font-size: 3rem;
+
+    margin-bottom: 1rem;
+}
+
+
+.servicio h3 {
+
+    color: var(--color-primario);
+
+    margin-bottom: 1rem;
+}
+
+
+.servicio p {
+
+    color: var(--color-texto-secundario);
+}
+
+
+/* ============================================
+   TESTIMONIOS
+============================================ */
+
+.testimonios {
+
+    padding: 5rem 2rem;
+
+    background-color: var(--color-blanco);
+}
+
+
+.carrusel-testimonios {
+
+    display: flex;
+
+    gap: 2rem;
+
+    overflow-x: auto;
+
+    padding: 1rem 0 2rem;
+
+    /*
+       Carrusel horizontal sin JavaScript.
+    */
+
+    scroll-snap-type: x mandatory;
+
+    scroll-behavior: smooth;
+}
+
+
+.testimonio {
+
+    flex: 0 0
+        calc(50% - 1rem);
+
+    min-height: 220px;
+
+    padding: 2rem;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    scroll-snap-align: start;
+
+    color: white;
+
+    border-radius: var(--radio);
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--color-primario),
+            var(--color-secundario)
+        );
+
+    box-shadow: var(--sombra);
+}
+
+
+.testimonio p {
+
+    font-size: 1.1rem;
+
+    font-style: italic;
+
+    margin-bottom: 1rem;
+}
+
+
+.testimonio strong {
+
+    font-size: 0.95rem;
+}
+
+
+.ayuda-carrusel {
+
+    text-align: center;
+
+    color: var(--color-texto-secundario);
+
+    font-size: 0.9rem;
+}
+
+
+/* ============================================
+   CONTACTO
+============================================ */
+
+.contacto {
+
+    padding: 5rem 2rem;
+
+    background-color: var(--color-fondo);
+}
+
+
+.formulario-contacto {
+
+    max-width: 650px;
+
+    margin: 0 auto;
+
+    padding: 2.5rem;
+
+    background-color: white;
+
+    border-radius: var(--radio);
+
+    box-shadow: var(--sombra);
+}
+
+
+.grupo {
+
+    margin-bottom: 1.5rem;
+}
+
+
+.grupo label {
+
+    display: block;
+
+    margin-bottom: 0.5rem;
+
+    font-weight: bold;
+
+    color: var(--color-texto);
+}
+
+
+.grupo input,
+.grupo textarea {
+
+    width: 100%;
+
+    padding: 0.9rem;
+
+    border: 2px solid #e1e5e8;
+
+    border-radius: 6px;
+
+    background-color: #fafafa;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 1rem;
+
+    transition: var(--transicion);
+}
+
+
+/* ============================================
+   VALIDACIÓN DEL FORMULARIO
+============================================ */
+
+.grupo input:focus,
+.grupo textarea:focus {
+
+    outline: none;
+
+    border-color: var(--color-primario);
+
+    background-color: white;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(102, 126, 234, 0.12);
+}
+
+
+/* Campo válido */
+
+.grupo input:valid,
+.grupo textarea:valid {
+
+    border-color: var(--color-exito);
+
+    background-color: #f3fff7;
+}
+
+
+/* Campo inválido */
+
+.grupo input:invalid:not(:placeholder-shown),
+.grupo textarea:invalid:not(:placeholder-shown) {
+
+    border-color: var(--color-error);
+
+    background-color: #fff6f6;
+}
+
+
+/* ============================================
+   BOTÓN ENVIAR
+============================================ */
+
+.btn-enviar {
+
+    width: 100%;
+
+    padding: 1rem;
+
+    border: none;
+
+    border-radius: 6px;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--color-primario),
+            var(--color-secundario)
+        );
+
+    font-size: 1rem;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: var(--transicion);
+}
+
+
+.btn-enviar:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 8px 20px
+        rgba(102, 126, 234, 0.30);
+}
+
+
+/* ============================================
+   FOOTER
+============================================ */
+
+.footer {
+
+    padding: 2.5rem 2rem;
+
+    background-color: var(--color-texto);
+
+    color: white;
+}
+
+
+.footer-contenido {
+
+    max-width: 1400px;
+
+    margin: 0 auto;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 2rem;
+}
+
+
+.footer p {
+
+    margin-top: 0.5rem;
+
+    color: #d5d8dc;
+}
+
+
+/* ============================================
+   MEDIA QUERY 1
+   Tablets
+============================================ */
+
+@media (max-width: 900px) {
+
+    .navbar {
+
+        padding: 1rem;
+    }
+
+
+    .nav-menu {
+
+        gap: 1rem;
+    }
+
+
+    .hero {
+
+        min-height: 550px;
+
+        padding: 5rem 1.5rem;
+    }
+
+
+    .hero h1 {
+
+        font-size: 2.8rem;
+    }
+
+
+    .grid-servicios {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .testimonio {
+
+        flex: 0 0 75%;
+    }
+
+
+    .footer-contenido {
+
+        flex-direction: column;
+
+        text-align: center;
+    }
+}
+
+
+/* ============================================
+   MEDIA QUERY 2
+   Celulares
+============================================ */
+
+@media (max-width: 600px) {
+
+    .navbar {
+
+        flex-direction: column;
+
+        gap: 1rem;
+
+        padding: 1rem;
+    }
+
+
+    .nav-menu {
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+        gap: 0.8rem 1.2rem;
+    }
+
+
+    .hero {
+
+        min-height: 500px;
+
+        padding: 4rem 1rem;
+    }
+
+
+    .hero h1 {
+
+        font-size: 2.2rem;
+    }
+
+
+    .hero p {
+
+        font-size: 1.1rem;
+    }
+
+
+    .servicios,
+    .testimonios,
+    .contacto {
+
+        padding: 3rem 1rem;
+    }
+
+
+    .seccion-titulo h2 {
+
+        font-size: 2rem;
+    }
+
+
+    .grid-servicios {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .testimonio {
+
+        flex: 0 0 90%;
+    }
+
+
+    .formulario-contacto {
+
+        padding: 1.5rem;
+    }
+
+
+    .footer {
+
+        padding: 2rem 1rem;
+    }
+}

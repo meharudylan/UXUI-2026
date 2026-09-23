@@ -1,0 +1,403 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+}
+
+
+/* =========================================
+   CONTENEDOR
+========================================= */
+
+.contenedor {
+    width: 100%;
+    max-width: 500px;
+
+    background: white;
+
+    padding: 35px;
+
+    border-radius: 15px;
+
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.25);
+}
+
+h1 {
+    text-align: center;
+
+    color: #2c3e50;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================================
+   RADIO BUTTONS
+   Se utilizan solamente para controlar
+   qué paso se muestra.
+========================================= */
+
+#mostrar-paso1,
+#mostrar-paso2 {
+    display: none;
+}
+
+
+/* =========================================
+   INDICADOR DE PASOS
+========================================= */
+
+.indicador-pasos {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 30px;
+}
+
+.paso-indicador {
+    width: 42px;
+    height: 42px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #ecf0f1;
+    color: #7f8c8d;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.conectar {
+    width: 45px;
+    height: 3px;
+
+    background-color: #ecf0f1;
+}
+
+
+/* Paso activo */
+
+#mostrar-paso1:checked ~ .indicador-pasos .indicador-1 {
+    background-color: #3498db;
+    color: white;
+
+    box-shadow: 0 4px 12px rgba(52, 152, 219, 0.35);
+}
+
+#mostrar-paso2:checked ~ .indicador-pasos .indicador-2 {
+    background-color: #3498db;
+    color: white;
+
+    box-shadow: 0 4px 12px rgba(52, 152, 219, 0.35);
+}
+
+
+/* =========================================
+   FORMULARIO
+========================================= */
+
+fieldset {
+    border: none;
+    padding: 0;
+}
+
+legend {
+    width: 100%;
+
+    font-size: 1.3rem;
+    font-weight: bold;
+
+    color: #3498db;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================================
+   MOSTRAR / OCULTAR PASOS
+========================================= */
+
+/* Por defecto solamente se muestra el paso 1 */
+
+.paso2 {
+    display: none;
+}
+
+
+/* Cuando se selecciona el paso 2 */
+
+#mostrar-paso2:checked ~ .formulario-multistep .paso1 {
+    display: none;
+}
+
+#mostrar-paso2:checked ~ .formulario-multistep .paso2 {
+    display: block;
+}
+
+
+/* =========================================
+   GRUPOS
+========================================= */
+
+.grupo-form {
+    margin-bottom: 25px;
+}
+
+.grupo-form label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #2c3e50;
+
+    font-weight: bold;
+}
+
+.grupo-form input:not([type="checkbox"]) {
+    width: 100%;
+
+    padding: 12px;
+
+    border: 2px solid #dfe6e9;
+
+    border-radius: 7px;
+
+    background-color: #f8f9fa;
+
+    font-size: 16px;
+
+    transition: 0.25s;
+}
+
+
+/* =========================================
+   VALIDACIÓN NATIVA
+========================================= */
+
+/*
+   No mostramos rojo inmediatamente al cargar
+   la página. El campo se pone rojo cuando
+   contiene un valor inválido o está vacío
+   después de interactuar.
+*/
+
+.grupo-form input:focus {
+    outline: none;
+
+    border-color: #3498db;
+
+    background-color: white;
+
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.12);
+}
+
+
+/* Campo válido */
+
+.grupo-form input:valid {
+    border-color: #2ecc71;
+
+    background-color: #f0fff5;
+}
+
+
+/* Campo inválido */
+
+.grupo-form input:invalid:not(:placeholder-shown) {
+    border-color: #e74c3c;
+
+    background-color: #fff5f5;
+}
+
+
+/* =========================================
+   MENSAJES DE ERROR
+========================================= */
+
+.error {
+    display: none;
+
+    color: #e74c3c;
+
+    font-size: 13px;
+
+    margin-top: 6px;
+}
+
+
+/* Mostrar error cuando el campo es inválido */
+
+.grupo-form input:invalid:not(:placeholder-shown) + .error {
+    display: block;
+}
+
+
+/* =========================================
+   CHECKBOX
+========================================= */
+
+.grupo-checkbox {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-bottom: 25px;
+
+    color: #2c3e50;
+}
+
+.grupo-checkbox input {
+    width: 18px;
+    height: 18px;
+
+    accent-color: #3498db;
+}
+
+.grupo-checkbox input:invalid {
+    outline: 2px solid #e74c3c;
+}
+
+
+/* =========================================
+   BOTONES
+========================================= */
+
+.btn-siguiente,
+.btn-anterior,
+.btn-enviar {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 48px;
+
+    padding: 12px 20px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.25s;
+}
+
+
+/* Siguiente */
+
+.btn-siguiente {
+    width: 100%;
+
+    background-color: #3498db;
+
+    color: white;
+
+    margin-top: 5px;
+}
+
+.btn-siguiente:hover {
+    background-color: #2980b9;
+
+    transform: translateY(-2px);
+}
+
+
+/* Contenedor de botones */
+
+.botones {
+    display: flex;
+
+    gap: 15px;
+}
+
+
+/* Anterior */
+
+.btn-anterior {
+    flex: 1;
+
+    background-color: #95a5a6;
+
+    color: white;
+}
+
+.btn-anterior:hover {
+    background-color: #7f8c8d;
+
+    transform: translateY(-2px);
+}
+
+
+/* Enviar */
+
+.btn-enviar {
+    flex: 1;
+
+    background-color: #2ecc71;
+
+    color: white;
+}
+
+.btn-enviar:hover {
+    background-color: #27ae60;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .contenedor {
+        padding: 25px 20px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    legend {
+        font-size: 1.1rem;
+    }
+
+    .botones {
+        flex-direction: column;
+    }
+
+    .btn-anterior,
+    .btn-enviar {
+        width: 100%;
+    }
+}

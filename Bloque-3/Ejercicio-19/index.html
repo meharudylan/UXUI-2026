@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro en 2 Pasos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <div class="contenedor">
+
+        <h1>Registro en 2 Pasos</h1>
+
+        <!-- Controles para cambiar de paso -->
+        <input type="radio" name="paso" id="mostrar-paso1" checked>
+        <input type="radio" name="paso" id="mostrar-paso2">
+
+        <!-- Indicador -->
+        <div class="indicador-pasos">
+            <label for="mostrar-paso1" class="paso-indicador indicador-1">1</label>
+            <div class="conectar"></div>
+            <label for="mostrar-paso2" class="paso-indicador indicador-2">2</label>
+        </div>
+
+        <form class="formulario-multistep">
+
+            <!-- =========================
+                 PASO 1
+            ========================== -->
+            <fieldset class="paso paso1">
+
+                <legend>Paso 1: Datos personales</legend>
+
+                <div class="grupo-form">
+                    <label for="nombre">Nombre completo</label>
+
+                    <input
+                        type="text"
+                        id="nombre"
+                        name="nombre"
+                        placeholder="Juan Pérez"
+                        required
+                    >
+
+                    <span class="error">
+                        Este campo es obligatorio.
+                    </span>
+                </div>
+
+                <div class="grupo-form">
+                    <label for="email">Correo electrónico</label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="tu@email.com"
+                        required
+                    >
+
+                    <span class="error">
+                        Ingresa un correo electrónico válido.
+                    </span>
+                </div>
+
+                <div class="grupo-form">
+                    <label for="telefono">Teléfono</label>
+
+                    <input
+                        type="tel"
+                        id="telefono"
+                        name="telefono"
+                        placeholder="+598 99 123 456"
+                        pattern="[0-9+ ()-]{8,}"
+                        required
+                    >
+
+                    <span class="error">
+                        Ingresa un teléfono válido.
+                    </span>
+                </div>
+
+                <label for="mostrar-paso2" class="btn-siguiente">
+                    Siguiente →
+                </label>
+
+            </fieldset>
+
+
+            <!-- =========================
+                 PASO 2
+            ========================== -->
+            <fieldset class="paso paso2">
+
+                <legend>Paso 2: Seguridad</legend>
+
+                <div class="grupo-form">
+                    <label for="contrasena">Contraseña</label>
+
+                    <input
+                        type="password"
+                        id="contrasena"
+                        name="contrasena"
+                        placeholder="Mínimo 8 caracteres"
+                        minlength="8"
+                        required
+                    >
+
+                    <span class="error">
+                        La contraseña debe tener al menos 8 caracteres.
+                    </span>
+                </div>
+
+                <div class="grupo-form">
+                    <label for="confirmar">Confirmar contraseña</label>
+
+                    <input
+                        type="password"
+                        id="confirmar"
+                        name="confirmar"
+                        placeholder="Repite tu contraseña"
+                        minlength="8"
+                        required
+                    >
+
+                    <span class="error">
+                        Debes confirmar tu contraseña.
+                    </span>
+                </div>
+
+                <div class="grupo-checkbox">
+
+                    <input
+                        type="checkbox"
+                        id="terminos"
+                        name="terminos"
+                        required
+                    >
+
+                    <label for="terminos">
+                        Acepto los términos y condiciones
+                    </label>
+
+                </div>
+
+                <div class="botones">
+
+                    <label for="mostrar-paso1" class="btn-anterior">
+                        ← Anterior
+                    </label>
+
+                    <button type="submit" class="btn-enviar">
+                        Completar registro
+                    </button>
+
+                </div>
+
+            </fieldset>
+
+        </form>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 18 - Grid Masonry</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Ejercicio 18: Grid Avanzado - Galería Masonry</h1>
+    <p class="intro">Galería con imágenes de tamaños desiguales usando grid-template-columns: repeat(auto-fill, minmax()) y grid-auto-flow: dense</p>
+
+    <div class="galeria">
+        <!-- Items normales -->
+        <div class="item item-1">
+            <img src="https://via.placeholder.com/200x200" alt="Imagen 1">
+            <h3>Imagen 1</h3>
+        </div>
+
+        <div class="item item-2">
+            <img src="https://via.placeholder.com/200x200" alt="Imagen 2">
+            <h3>Imagen 2</h3>
+        </div>
+
+        <!-- Item que ocupa 2 columnas y 2 filas -->
+        <div class="item item-grande">
+            <img src="https://via.placeholder.com/400x400" alt="Imagen Grande">
+            <h3>Imagen Grande (2x2)</h3>
+        </div>
+
+        <div class="item item-3">
+            <img src="https://via.placeholder.com/200x200" alt="Imagen 3">
+            <h3>Imagen 3</h3>
+        </div>
+
+        <div class="item item-4">
+            <img src="https://via.placeholder.com/200x200" alt="Imagen 4">
+            <h3>Imagen 4</h3>
+        </div>
+
+        <div class="item item-5">
+            <img src="https://via.placeholder.com/200x200" alt="Imagen 5">
+            <h3>Imagen 5</h3>
+        </div>
+
+        <!-- Otro item grande -->
+        <div class="item item-grande-2">
+            <img src="https://via.placeholder.com/400x300" alt="Imagen Grande 2">
+            <h3>Imagen Grande 2 (2x1.5)</h3>
+        </div>
+
+        <div class="item item-6">
+            <img src="https://via.placeholder.com/200x200" alt="Imagen 6">
+            <h3>Imagen 6</h3>
+        </div>
+
+        <div class="item item-7">
+            <img src="https://via.placeholder.com/200x200" alt="Imagen 7">
+            <h3>Imagen 7</h3>
+        </div>
+
+        <div class="item item-8">
+            <img src="https://via.placeholder.com/200x200" alt="Imagen 8">
+            <h3>Imagen 8</h3>
+        </div>
+
+        <div class="item item-9">
+            <img src="https://via.placeholder.com/200x200" alt="Imagen 9">
+            <h3>Imagen 9</h3>
+        </div>
+
+        <div class="item item-10">
+            <img src="https://via.placeholder.com/200x200" alt="Imagen 10">
+            <h3>Imagen 10</h3>
+        </div>
+    </div>
+
+    <div class="info">
+        <h2>Propiedades CSS Utilizadas</h2>
+        <ul>
+            <li><strong>grid-template-columns: repeat(auto-fill, minmax(200px, 1fr))</strong> - Crea columnas que se adaptan</li>
+            <li><strong>grid-auto-flow: dense</strong> - Rellena huecos automáticamente</li>
+            <li><strong>grid-column: span 2</strong> - Item ocupa 2 columnas</li>
+            <li><strong>grid-row: span 2</strong> - Item ocupa 2 filas</li>
+            <li>Los items grandes se distribuyen sin crear espacios vacíos</li>
+        </ul>
+    </div>
+</body>
+</html>

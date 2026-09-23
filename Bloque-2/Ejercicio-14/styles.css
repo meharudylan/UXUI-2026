@@ -1,0 +1,259 @@
+/* ============================================
+   VARIABLES CSS EN :root (TEMA CLARO)
+   ============================================ */
+
+:root {
+    /* Colores */
+    --color-primario: #3498db;
+    --color-secundario: #2ecc71;
+    --color-fondo: #ffffff;
+    --color-fondo-body: #ecf0f1;
+    --color-texto: #2c3e50;
+    --color-bordes: #bdc3c7;
+    --color-hover: #2980b9;
+
+    /* Espaciado */
+    --espaciado-base: 1rem;
+    --espaciado-pequeño: 0.5rem;
+    --espaciado-grande: 2rem;
+
+    /* Bordes */
+    --border-radio: 8px;
+    --border-radio-small: 4px;
+
+    /* Sombras */
+    --sombra: 0 2px 8px rgba(0, 0, 0, 0.1);
+    --sombra-fuerte: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+/* ============================================
+   VARIABLES CSS EN :root (TEMA OSCURO)
+   ============================================ */
+
+[data-theme="dark"] {
+    --color-primario: #5dade2;
+    --color-secundario: #58d68d;
+    --color-fondo: #2c3e50;
+    --color-fondo-body: #1a252f;
+    --color-texto: #ecf0f1;
+    --color-bordes: #34495e;
+    --color-hover: #3498db;
+
+    --sombra: 0 2px 8px rgba(0, 0, 0, 0.3);
+    --sombra-fuerte: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+/* ============================================
+   RESET Y BASE
+   ============================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--color-fondo-body);
+    color: var(--color-texto);
+    line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    padding: var(--espaciado-base);
+}
+
+/* ============================================
+   HEADER
+   ============================================ */
+
+.header {
+    background-color: var(--color-primario);
+    color: white;
+    padding: var(--espaciado-grande);
+    border-radius: var(--border-radio);
+    margin-bottom: var(--espaciado-grande);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: var(--sombra-fuerte);
+}
+
+.header h1 {
+    font-size: 2em;
+}
+
+/* ============================================
+   BOTÓN CAMBIAR TEMA
+   ============================================ */
+
+.btn-tema {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 2px solid white;
+    padding: var(--espaciado-pequeño) var(--espaciado-base);
+    border-radius: var(--border-radio-small);
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+.btn-tema:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+}
+
+/* ============================================
+   MAIN Y CONTENEDOR
+   ============================================ */
+
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--espaciado-grande);
+}
+
+/* ============================================
+   TARJETAS (USANDO VARIABLES)
+   ============================================ */
+
+.tarjeta {
+    background-color: var(--color-fondo);
+    padding: var(--espaciado-grande);
+    border-radius: var(--border-radio);
+    box-shadow: var(--sombra);
+    border: 1px solid var(--color-bordes);
+    transition: all 0.3s ease;
+}
+
+.tarjeta:hover {
+    box-shadow: var(--sombra-fuerte);
+    transform: translateY(-5px);
+}
+
+.tarjeta h2 {
+    color: var(--color-primario);
+    margin-bottom: var(--espaciado-base);
+    font-size: 1.5em;
+}
+
+.tarjeta p {
+    color: var(--color-texto);
+    margin-bottom: var(--espaciado-base);
+}
+
+/* ============================================
+   LISTA DENTRO DE TARJETAS
+   ============================================ */
+
+.lista {
+    list-style: none;
+    padding-left: 0;
+}
+
+.lista li {
+    padding: var(--espaciado-pequeño) 0;
+    padding-left: var(--espaciado-base);
+    border-left: 3px solid var(--color-primario);
+    color: var(--color-texto);
+    margin-bottom: var(--espaciado-pequeño);
+}
+
+/* ============================================
+   BOTONES (USANDO VARIABLES)
+   ============================================ */
+
+.btn-principal,
+.btn-secundario {
+    padding: var(--espaciado-pequeño) var(--espaciado-base);
+    border: none;
+    border-radius: var(--border-radio-small);
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: var(--espaciado-base);
+}
+
+.btn-principal {
+    background-color: var(--color-primario);
+    color: white;
+}
+
+.btn-principal:hover {
+    background-color: var(--color-hover);
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.btn-secundario {
+    background-color: var(--color-secundario);
+    color: white;
+}
+
+.btn-secundario:hover {
+    background-color: #27ae60;
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* ============================================
+   CAJA DE INFORMACIÓN
+   ============================================ */
+
+.caja-info {
+    grid-column: 1 / -1;
+    background-color: var(--color-fondo);
+    padding: var(--espaciado-grande);
+    border-radius: var(--border-radio);
+    border-left: 4px solid var(--color-primario);
+    box-shadow: var(--sombra);
+}
+
+.caja-info h3 {
+    color: var(--color-primario);
+    margin-bottom: var(--espaciado-base);
+}
+
+.caja-info p {
+    margin-bottom: var(--espaciado-pequeño);
+    padding: var(--espaciado-pequeño);
+    background-color: var(--color-fondo-body);
+    border-radius: var(--border-radio-small);
+}
+
+code {
+    background-color: var(--color-bordes);
+    padding: 2px 6px;
+    border-radius: var(--border-radio-small);
+    font-family: 'Courier New', monospace;
+    color: var(--color-primario);
+    font-weight: bold;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        gap: var(--espaciado-base);
+        text-align: center;
+    }
+
+    .header h1 {
+        font-size: 1.5em;
+    }
+
+    main {
+        grid-template-columns: 1fr;
+        gap: var(--espaciado-base);
+    }
+
+    .caja-info {
+        padding: var(--espaciado-base);
+    }
+}

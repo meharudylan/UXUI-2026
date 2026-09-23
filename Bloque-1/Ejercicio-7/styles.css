@@ -1,0 +1,30 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+h1 {
+    text-align: center;
+}
+
+.contenedor {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    width: 200px;
+    height: 180px;
+
+    margin: 10px;
+    padding: 20px;
+
+    border: 2px solid #333333;
+
+    box-sizing: border-box;
+}

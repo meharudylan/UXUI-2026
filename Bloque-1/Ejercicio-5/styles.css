@@ -1,0 +1,14 @@
+body {
+    font-family: Georgia, serif;
+    background-color: rgb(211, 208, 208);
+    color: black;
+}
+
+h1 {
+    color: rgb(15, 173, 86);
+    font-size: 40px;
+}
+
+img {
+    width: 300px;
+}

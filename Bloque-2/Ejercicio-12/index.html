@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 12 - Posicionamiento</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <button class="btn-volver-arriba">↑ Volver arriba</button>
+
+    <h1>Ejercicio 12: Posicionamiento (position: fixed y absolute)</h1>
+    <p>Desplázate hacia abajo para ver el botón "Volver arriba" fijo en la esquina inferior derecha.</p>
+    
+    <section class="contenido">
+        <h2>Sección 1</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </section>
+
+    <section class="contenido">
+        <h2>Sección 2</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        
+        
+        <div class="elemento-tooltip">
+            Pasa el mouse aquí
+            <span class="tooltip">Este es un tooltip con position: absolute</span>
+        </div>
+
+        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+    </section>
+
+    <section class="contenido">
+        <h2>Sección 3</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </section>
+
+    <section class="contenido">
+        <h2>Sección 4</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        
+        
+        <div class="elemento-tooltip">
+            Otro tooltip aquí
+            <span class="tooltip">Posición absolute dentro de un contenedor relative</span>
+        </div>
+
+        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </section>
+
+    <section class="contenido">
+        <h2>Sección 5</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+    </section>
+
+    <script>
+        const btnVolver = document.querySelector('.btn-volver-arriba');
+        
+        btnVolver.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                btnVolver.style.opacity = '1';
+                btnVolver.style.pointerEvents = 'auto';
+            } else {
+                btnVolver.style.opacity = '0';
+                btnVolver.style.pointerEvents = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+/* Selector de etiqueta */
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Selector de etiqueta */
+h1 {
+    text-align: center;
+}
+
+/* Selector de clase */
+.card {
+    background-color: #eeeeee;
+    padding: 20px;
+    margin: 10px;
+}
+
+/* Selector de ID */
+#destacada {
+    background-color: #d9edf7;
+    padding: 20px;
+    margin: 10px;
+}
+
+/* Selector descendiente */
+.card p {
+    color: #555555;
+}
+
+/* Otro selector descendiente */
+.card span {
+    font-size: 14px;
+}

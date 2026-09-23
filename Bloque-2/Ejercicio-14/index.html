@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 14 - Variables CSS y Temas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Ejercicio 14: Variables CSS y Temas</h1>
+        <button id="btn-tema" class="btn-tema">🌙 Modo Oscuro</button>
+    </header>
+
+    <main>
+        <section class="tarjeta">
+            <h2>Tarjeta 1</h2>
+            <p>Esta sección utiliza variables CSS para los colores y espaciados. Cambia el tema para ver cómo se actualizan automáticamente.</p>
+            <button class="btn-principal">Botón Principal</button>
+        </section>
+
+        <section class="tarjeta">
+            <h2>Tarjeta 2</h2>
+            <p>Las variables CSS se definen en :root y se pueden cambiar dinámicamente. Esto hace el código más mantenible.</p>
+            <ul class="lista">
+                <li>Elemento 1</li>
+                <li>Elemento 2</li>
+                <li>Elemento 3</li>
+            </ul>
+        </section>
+
+        <section class="tarjeta">
+            <h2>Tarjeta 3</h2>
+            <p>Con data-theme podemos crear temas sin necesidad de clases adicionales.</p>
+            <button class="btn-secundario">Botón Secundario</button>
+        </section>
+
+        <section class="caja-info">
+            <h3>Variables CSS Utilizadas:</h3>
+            <p><code>--color-primario</code> - Color principal de la app</p>
+            <p><code>--color-secundario</code> - Color secundario</p>
+            <p><code>--color-fondo</code> - Color de fondo</p>
+            <p><code>--color-texto</code> - Color del texto</p>
+            <p><code>--espaciado-base</code> - Unidad de espaciado base</p>
+            <p><code>--border-radio</code> - Radio de bordes</p>
+            <p><code>--sombra</code> - Sombra de elementos</p>
+        </section>
+    </main>
+
+    <script>
+        const btnTema = document.getElementById('btn-tema');
+        const html = document.documentElement;
+
+        // Verificar si hay tema guardado
+        const temaSaved = localStorage.getItem('tema') || 'light';
+        if (temaSaved === 'dark') {
+            html.setAttribute('data-theme', 'dark');
+            btnTema.textContent = '☀️ Modo Claro';
+        }
+
+        // Cambiar tema
+        btnTema.addEventListener('click', () => {
+            const temaActual = html.getAttribute('data-theme');
+            const nuevoTema = temaActual === 'dark' ? 'light' : 'dark';
+            
+            html.setAttribute('data-theme', nuevoTema);
+            localStorage.setItem('tema', nuevoTema);
+            
+            btnTema.textContent = nuevoTema === 'dark' ? '☀️ Modo Claro' : '🌙 Modo Oscuro';
+        });
+    </script>
+</body>
+</html>
