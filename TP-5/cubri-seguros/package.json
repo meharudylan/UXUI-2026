@@ -1,0 +1,9 @@
+{
+  "name": "cubri-seguros",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "npx serve .",
+    "test": "node tests/casos.mjs"
+  }
+}
