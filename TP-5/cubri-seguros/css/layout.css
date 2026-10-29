@@ -1,0 +1,28 @@
+/* Qué se ve en cada paso según breakpoint. body[data-paso-actual] lo pone render.js */
+
+/* Header: marca + nav en desktop; en mobile solo en el inicio */
+#header-barra { display: none; }
+@media (max-width: 1023px) {
+  body:not([data-paso-actual="0"]) #header-marca { display: none; }
+  body[data-paso-actual="1"] #header-barra,
+  body[data-paso-actual="2"] #header-barra,
+  body[data-paso-actual="3"] #header-barra,
+  body[data-paso-actual="4"] #header-barra { display: flex; }
+  body[data-paso-actual="5"] #header,
+  body[data-paso-actual="6"] #header { display: none; }
+}
+
+/* Resumen lateral: desktop pasos 1-4; mobile solo en Pago */
+#resumen { display: none; }
+body[data-paso-actual="4"] #resumen { display: block; }
+@media (min-width: 1024px) {
+  body[data-paso-actual="1"] #resumen,
+  body[data-paso-actual="2"] #resumen,
+  body[data-paso-actual="3"] #resumen,
+  body[data-paso-actual="4"] #resumen { display: block; }
+}
+
+/* Mobile: el contenido de pasos no es una card */
+@media (max-width: 1023px) {
+  #slot-pasos { background: transparent; border: 0; box-shadow: none; padding: 0; }
+}

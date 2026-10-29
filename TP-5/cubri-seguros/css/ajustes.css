@@ -1,0 +1,17 @@
+/* Ajustes sobre Basecoat para igualar el Figma.
+   Se carga DESPUÉS de basecoat.css: a igual especificidad gana el último. */
+
+.btn { min-height: 3.25rem; border-radius: var(--radius); font-size: .9375rem; font-weight: 700; }
+.btn[disabled] { background: #CBD5E1; color: #fff; border-color: transparent; opacity: 1; }
+.btn[data-variant="outline"] { background: #fff; color: var(--primary); border: 2px solid var(--primary); }
+.btn[data-variant="outline"]:hover { background: var(--primary-50); }
+.btn[data-variant="ghost"] { color: var(--primary); background: transparent; }
+
+.field > label:not(.checkbox-label) { font-size: 13px; font-weight: 600; color: var(--text); }
+.field input:not([type="checkbox"]):not([type="radio"]),
+.field select { min-height: 3rem; border-radius: var(--radius); background: #fff; font-size: .9375rem; }
+.field[data-invalid] input:not([type="checkbox"]),
+.field[data-invalid] select { border-color: var(--error); background: #FEF2F2; }
+
+/* Las cards se arman con padding propio en el HTML (partials): se anula el de Basecoat */
+.card { gap: 0; padding-block: 0; border-radius: 1rem; }

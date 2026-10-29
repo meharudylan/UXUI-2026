@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cubrí Seguros</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+  <!-- Basecoat UI (estilos de componentes) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/basecoat-css@1.1.0/dist/basecoat.cdn.min.css">
+  <!-- Tailwind v4 en el navegador (utilidades) -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/ajustes.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <script type="module" src="js/app.js"></script>
+</head>
+
+<body class="min-h-screen">
+
+  <!-- Header: marca + nav (desktop / inicio mobile) y barra "Volver" (checkout mobile) -->
+  <header id="header" class="border-b border-slate-200 bg-white">
+    <div id="header-marca" class="mx-auto flex h-14 max-w-[1440px] items-center justify-between px-5 lg:h-16 lg:px-20">
+      <button type="button" class="flex items-center gap-2 text-xl font-extrabold text-indigo-600"
+        data-accion="ir-inicio" aria-label="Cubrí Seguros, ir al inicio">
+        <span class="grid size-7 place-items-center rounded-lg bg-indigo-600 text-white">
+          <svg class="size-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path
+              d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" />
+          </svg>
+        </span>
+        Cubrí
+      </button>
+      <nav class="hidden items-center gap-8 text-[15px] text-slate-500 lg:flex" aria-label="Principal">
+        <span>Seguros</span><span>Siniestros</span><span>Ayuda</span>
+        <span class="rounded-xl border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-900">Mi
+          cuenta</span>
+      </nav>
+    </div>
+    <div id="header-barra" class="h-14 items-center gap-3 px-5">
+      <button type="button" class="grid size-8 place-items-center rounded-lg text-slate-900" data-accion="volver"
+        aria-label="Volver al paso anterior">
+        <svg class="size-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="m15 18-6-6 6-6" />
+        </svg>
+      </button>
+      <span class="text-[17px] font-bold" data-titulo="barra"></span>
+    </div>
+  </header>
+
+  <main>
+    <!-- Pantalla 01 · Inicio / Catálogo (paso 0) -->
+    <div id="slot-inicio">
+      <section data-paso="0" hidden aria-labelledby="titulo-inicio">
+        <div
+          class="mx-auto grid max-w-[1440px] gap-6 px-5 pb-40 pt-5 lg:grid-cols-2 lg:gap-x-16 lg:gap-y-8 lg:px-20 lg:pb-16 lg:pt-16">
+
+          <!-- Hero -->
+          <div class="lg:col-start-1 lg:row-start-1">
+            <span class="badge hidden lg:inline-flex" data-variant="secondary">Primer mes con 20% OFF</span>
+            <h1 id="titulo-inicio"
+              class="text-[26px] font-extrabold leading-tight tracking-tight lg:mt-5 lg:text-[56px] lg:leading-[1.05]">
+              Protegé lo que más usás en menos de 3 minutos
+            </h1>
+            <p class="mt-3 text-[15px] leading-relaxed text-slate-500 lg:mt-6 lg:text-lg">
+              Elegí qué querés asegurar. Cotizás al instante y contratás 100% online.<span class="hidden lg:inline"> Sin
+                papeles ni llamadas.</span>
+            </p>
+          </div>
+
+          <!-- Productos: solo Celular está habilitado -->
+          <div class="grid grid-cols-2 gap-3 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:gap-4" role="list"
+            aria-label="Productos">
+            <button type="button" role="listitem" aria-pressed="true" data-producto="celular"
+              class="min-h-[150px] cursor-pointer rounded-2xl border-2 border-indigo-600 bg-white p-[17px] text-left transition hover:shadow-md lg:min-h-[180px] lg:p-6">
+              <span class="mb-6 grid size-11 place-items-center rounded-xl bg-indigo-50 text-indigo-600 lg:size-12">
+                <svg class="size-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect width="14" height="20" x="5" y="2" rx="2" ry="2" />
+                  <path d="M12 18h.01" />
+                </svg>
+              </span>
+              <span class="block text-[17px] font-bold">Celular</span>
+              <span class="block text-xs text-slate-500 lg:text-sm">Robo, rotura y pérdida</span>
+            </button>
+
+            <div role="listitem" aria-disabled="true" data-producto="hogar"
+              class="relative min-h-[150px] rounded-2xl border border-slate-200 bg-white p-[17px] opacity-70 lg:min-h-[180px] lg:p-6">
+              <span class="badge absolute right-3 top-3" data-variant="secondary">Próximamente</span>
+              <span class="mb-6 grid size-11 place-items-center rounded-xl bg-indigo-50 text-indigo-600 lg:size-12">
+                <svg class="size-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" />
+                  <path
+                    d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                </svg>
+              </span>
+              <span class="block text-[17px] font-bold">Hogar</span>
+              <span class="block text-xs text-slate-500 lg:text-sm">Incendio y robo</span>
+            </div>
+
+            <div role="listitem" aria-disabled="true" data-producto="bicicleta"
+              class="relative min-h-[150px] rounded-2xl border border-slate-200 bg-white p-[17px] opacity-70 lg:min-h-[180px] lg:p-6">
+              <span class="badge absolute right-3 top-3" data-variant="secondary">Próximamente</span>
+              <span class="mb-6 grid size-11 place-items-center rounded-xl bg-indigo-50 text-indigo-600 lg:size-12">
+                <svg class="size-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="18.5" cy="17.5" r="3.5" />
+                  <circle cx="5.5" cy="17.5" r="3.5" />
+                  <circle cx="15" cy="5" r="1" />
+                  <path d="M12 17.5V14l-3-3 4-3 2 3h2" />
+                </svg>
+              </span>
+              <span class="block text-[17px] font-bold">Bicicleta</span>
+              <span class="block text-xs text-slate-500 lg:text-sm">Robo total</span>
+            </div>
+
+            <div role="listitem" aria-disabled="true" data-producto="viaje"
+              class="relative min-h-[150px] rounded-2xl border border-slate-200 bg-white p-[17px] opacity-70 lg:min-h-[180px] lg:p-6">
+              <span class="badge absolute right-3 top-3" data-variant="secondary">Próximamente</span>
+              <span class="mb-6 grid size-11 place-items-center rounded-xl bg-indigo-50 text-indigo-600 lg:size-12">
+                <svg class="size-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="m22 2-7 20-4-9-9-4Z" />
+                  <path d="M22 2 11 13" />
+                </svg>
+              </span>
+              <span class="block text-[17px] font-bold">Viaje</span>
+              <span class="block text-xs text-slate-500 lg:text-sm">Asistencia al viajero</span>
+            </div>
+          </div>
+
+          <!-- Promo (mobile) -->
+          <div class="card lg:hidden">
+            <div class="flex items-center gap-3 p-[17px]">
+              <span
+                class="shrink-0 rounded-full bg-emerald-50 px-2 py-0.5 text-[11px] font-bold text-emerald-600">NUEVO</span>
+              <p class="text-[13px] text-slate-500">Primer mes con 20% OFF en todos los planes</p>
+            </div>
+          </div>
+
+          <!-- CTA: barra fija en mobile, debajo del hero en desktop -->
+          <div
+            class="fixed inset-x-0 bottom-0 z-10 border-t border-slate-200 bg-white p-5 lg:static lg:z-auto lg:col-start-1 lg:row-start-2 lg:self-start lg:border-0 lg:bg-transparent lg:p-0">
+            <button type="button" class="btn w-full lg:w-auto lg:min-w-[220px]" data-accion="cotizar">
+              <span class="lg:hidden">Cotizar seguro de Celular</span><span class="hidden lg:inline">Cotizar
+                ahora</span>
+            </button>
+          </div>
+
+          <!-- Beneficios (desktop) -->
+          <ul class="hidden gap-6 lg:col-span-2 lg:grid lg:grid-cols-3">
+            <li class="card">
+              <div class="p-6"><strong class="block text-[15px]">100% online</strong><span
+                  class="text-sm text-slate-500">Cotizás y contratás desde la web</span></div>
+            </li>
+            <li class="card">
+              <div class="p-6"><strong class="block text-[15px]">Póliza al instante</strong><span
+                  class="text-sm text-slate-500">La recibís por email al confirmar</span></div>
+            </li>
+            <li class="card">
+              <div class="p-6"><strong class="block text-[15px]">Sin permanencia</strong><span
+                  class="text-sm text-slate-500">Cancelás cuando quieras</span></div>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </div>
+
+    <!-- Pantallas 02 a 05: título + stepper + (formulario | resumen) -->
+    <div id="checkout" hidden>
+      <div class="mx-auto hidden max-w-[1440px] px-20 pt-8 lg:block">
+        <p class="text-[13px] font-semibold text-indigo-600">Seguro de Celular</p>
+        <h1 class="text-2xl font-extrabold tracking-tight lg:text-[28px]" data-titulo="h1"></h1>
+      </div>
+
+      <div class="border-b border-slate-200 bg-white lg:border-0 lg:bg-transparent">
+        <nav class="mx-auto max-w-[1440px] px-5 py-3.5 lg:px-20 lg:py-6" aria-label="Pasos de la contratación">
+          <ol id="stepper" class="flex items-center"></ol>
+        </nav>
+      </div>
+
+      <div
+        class="mx-auto grid max-w-[1440px] px-5 pb-44 pt-5 lg:grid-cols-[1fr_380px] lg:items-start lg:gap-8 lg:px-20 lg:pb-16 lg:pt-0">
+        <div id="slot-pasos" class="lg:rounded-2xl lg:border lg:border-slate-200 lg:bg-white lg:p-8">
+
+          <!-- Pantalla 02 · Cotizar (paso 1) -->
+          <section data-paso="1" hidden aria-label="Datos del equipo">
+            <form novalidate class="flex flex-col gap-4 lg:gap-5">
+              <div class="grid gap-4 lg:grid-cols-2 lg:gap-5">
+
+                <div role="group" class="field" data-campo="equipo.marca" data-etiqueta="Marca">
+                  <label for="marca">Marca</label>
+                  <select id="marca" aria-describedby="marca-error">
+                    <option value="">Elegí una marca</option>
+                    <option>Samsung</option>
+                    <option>Apple</option>
+                    <option>Motorola</option>
+                    <option>Xiaomi</option>
+                    <option>Otra</option>
+                  </select>
+                  <p id="marca-error" role="alert" data-error hidden class="text-xs text-red-600"></p>
+                </div>
+
+                <div role="group" class="field" data-campo="equipo.modelo" data-etiqueta="Modelo">
+                  <label for="modelo">Modelo</label>
+                  <input id="modelo" type="text" autocomplete="off" placeholder="Ej.: Galaxy A55"
+                    aria-describedby="modelo-error">
+                  <p id="modelo-error" role="alert" data-error hidden class="text-xs text-red-600"></p>
+                </div>
+
+                <div role="group" class="field" data-campo="equipo.valor" data-etiqueta="Valor del equipo">
+                  <label for="valor">Valor del equipo</label>
+                  <input id="valor" type="text" inputmode="numeric" autocomplete="off" placeholder="600.000"
+                    aria-describedby="valor-ayuda valor-error">
+                  <p id="valor-ayuda" data-ayuda class="text-xs text-slate-500">Entre $100.000 y $2.500.000</p>
+                  <p id="valor-error" role="alert" data-error hidden class="text-xs text-red-600"></p>
+                </div>
+
+                <!-- Antigüedad: chips (radios con el mismo name = opción única) -->
+                <div role="radiogroup" aria-labelledby="antiguedad-titulo" data-campo="equipo.antiguedad"
+                  data-etiqueta="Antigüedad" class="flex flex-col gap-1.5">
+                  <span id="antiguedad-titulo" class="text-[13px] font-semibold">Antigüedad</span>
+                  <div class="flex flex-wrap gap-2">
+                    <label
+                      class="cursor-pointer rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-[15px] has-[:checked]:border-2 has-[:checked]:border-indigo-600 has-[:checked]:bg-indigo-50 has-[:checked]:font-semibold has-[:checked]:text-indigo-700 has-[:focus-visible]:ring-4 has-[:focus-visible]:ring-indigo-200">
+                      <input type="radio" name="antiguedad" value="menos1" class="sr-only">Menos de 1 año
+                    </label>
+                    <label
+                      class="cursor-pointer rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-[15px] has-[:checked]:border-2 has-[:checked]:border-indigo-600 has-[:checked]:bg-indigo-50 has-[:checked]:font-semibold has-[:checked]:text-indigo-700 has-[:focus-visible]:ring-4 has-[:focus-visible]:ring-indigo-200">
+                      <input type="radio" name="antiguedad" value="1a2" class="sr-only">1 a 2 años
+                    </label>
+                    <label
+                      class="cursor-pointer rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-[15px] has-[:checked]:border-2 has-[:checked]:border-indigo-600 has-[:checked]:bg-indigo-50 has-[:checked]:font-semibold has-[:checked]:text-indigo-700 has-[:focus-visible]:ring-4 has-[:focus-visible]:ring-indigo-200">
+                      <input type="radio" name="antiguedad" value="mas2" class="sr-only">+2 años
+                    </label>
+                  </div>
+                  <p id="antiguedad-error" role="alert" data-error hidden class="text-xs text-red-600"></p>
+                </div>
+              </div>
+
+              <p data-error-carga role="alert" hidden class="rounded-xl bg-red-50 p-3 text-sm text-red-600"></p>
+
+              <!-- Acciones: barra fija en mobile, fila con separador en desktop -->
+              <div
+                class="fixed inset-x-0 bottom-0 z-10 flex flex-col gap-3 border-t border-slate-200 bg-white p-5 lg:static lg:mt-2 lg:flex-row lg:items-center lg:justify-end lg:bg-transparent lg:px-0 lg:pb-0 lg:pt-6">
+                <p data-ayuda-boton hidden class="text-center text-xs text-slate-500 lg:text-right">
+                  <span data-texto></span>
+                  <button type="button" class="font-semibold text-indigo-600 underline"
+                    data-accion="mostrar-errores">Ver qué falta</button>
+                </p>
+                <button type="submit" class="btn w-full lg:w-60" data-accion-principal disabled><span
+                    data-etiqueta-boton>Ver planes</span></button>
+              </div>
+            </form>
+          </section>
+
+          <!-- Pantalla 03 · Elegir plan (paso 2) -->
+          <section data-paso="2" hidden aria-label="Elegir plan">
+            <form novalidate class="flex flex-col gap-4 lg:gap-5">
+
+              <!-- Las cards se crean desde este template con los datos de planes.json -->
+              <div id="lista-planes" role="radiogroup" aria-label="Planes disponibles" data-campo="plan"
+                data-etiqueta="Plan" class="grid gap-3 lg:grid-cols-3 lg:gap-4"></div>
+
+              <template id="tpl-plan">
+                <!-- Toda la card es clickeable: <label> que envuelve .card + radio -->
+                <label class="group block cursor-pointer">
+                  <input type="radio" name="plan" class="sr-only">
+                  <div
+                    class="h-full rounded-2xl border-2 border-slate-200 bg-white p-[17px] transition group-has-[:checked]:border-indigo-600 group-has-[:checked]:ring-4 group-has-[:checked]:ring-indigo-100 group-has-[:focus-visible]:ring-4 group-has-[:focus-visible]:ring-indigo-300 lg:p-[21px]">
+                    <div class="flex items-center justify-between gap-2">
+                      <div class="flex items-center gap-2">
+                        <span class="text-[17px] font-bold" data-nombre></span>
+                        <span class="badge" data-badge hidden>Recomendado</span>
+                      </div>
+                      <span
+                        class="grid size-[22px] shrink-0 place-items-center rounded-full border-2 border-slate-300 bg-white group-has-[:checked]:border-indigo-600 group-has-[:checked]:bg-indigo-600"
+                        aria-hidden="true">
+                        <span class="size-2 rounded-full bg-white opacity-0 group-has-[:checked]:opacity-100"></span>
+                      </span>
+                    </div>
+                    <div class="mt-3 flex items-baseline gap-2">
+                      <span class="text-[28px] font-extrabold tracking-tight" data-precio></span>
+                      <span class="text-sm text-slate-500">/ mes</span>
+                    </div>
+                    <ul class="mt-3 flex flex-col gap-1.5 border-slate-200 lg:mt-4 lg:border-t lg:pt-4" data-coberturas>
+                    </ul>
+                  </div>
+                </label>
+              </template>
+
+              <!-- Acciones -->
+              <div
+                class="fixed inset-x-0 bottom-0 z-10 flex flex-col gap-3 border-t border-slate-200 bg-white p-5 lg:static lg:mt-2 lg:flex-row lg:items-center lg:justify-between lg:bg-transparent lg:px-0 lg:pb-0 lg:pt-6">
+                <button type="button" class="btn hidden lg:inline-flex lg:w-40" data-variant="outline"
+                  data-accion="volver">Volver</button>
+                <!-- Barra de resumen (mobile): la rellena renderResumen() -->
+                <div class="flex justify-between text-[13px] lg:hidden">
+                  <span class="text-slate-500" data-resumen="linea"></span>
+                  <strong data-resumen="cuota"></strong>
+                </div>
+                <button type="submit" class="btn w-full lg:w-60" data-accion-principal disabled><span
+                    data-etiqueta-boton>Continuar</span></button>
+              </div>
+            </form>
+          </section>
+
+          <!-- Pantalla 04 · Datos personales (paso 3) -->
+          <section data-paso="3" hidden aria-label="Datos personales">
+            <form novalidate class="flex flex-col gap-4 lg:gap-5">
+              <div class="grid grid-cols-2 gap-4 lg:grid-cols-3 lg:gap-5">
+
+                <div role="group" class="field" data-campo="titular.nombre" data-etiqueta="Nombre">
+                  <label for="nombre">Nombre</label>
+                  <input id="nombre" type="text" autocomplete="given-name" aria-describedby="nombre-error">
+                  <p id="nombre-error" role="alert" data-error hidden class="text-xs text-red-600"></p>
+                </div>
+
+                <div role="group" class="field" data-campo="titular.apellido" data-etiqueta="Apellido">
+                  <label for="apellido">Apellido</label>
+                  <input id="apellido" type="text" autocomplete="family-name" aria-describedby="apellido-error">
+                  <p id="apellido-error" role="alert" data-error hidden class="text-xs text-red-600"></p>
+                </div>
+
+                <div role="group" class="field" data-campo="titular.dni" data-etiqueta="DNI">
+                  <label for="dni">DNI</label>
+                  <input id="dni" type="text" inputmode="numeric" autocomplete="off" placeholder="30123456"
+                    aria-describedby="dni-error">
+                  <p id="dni-error" role="alert" data-error hidden class="text-xs text-red-600"></p>
+                </div>
+
+                <div role="group" class="field" data-campo="titular.nacimiento" data-etiqueta="Nacimiento">
+                  <label for="nacimiento"><span class="lg:hidden">Nacimiento</span><span class="hidden lg:inline">Fecha
+                      de nacimiento</span></label>
+                  <input id="nacimiento" type="date" autocomplete="bday" aria-describedby="nacimiento-error">
+                  <p id="nacimiento-error" role="alert" data-error hidden class="text-xs text-red-600"></p>
+                </div>
+
+                <div role="group" class="field col-span-2 lg:col-span-1" data-campo="titular.email"
+                  data-etiqueta="Email">
+                  <label for="email">Email</label>
+                  <input id="email" type="email" autocomplete="email" placeholder="juan.perez@mail.com"
+                    aria-describedby="email-error">
+                  <p id="email-error" role="alert" data-error hidden class="text-xs text-red-600"></p>
+                </div>
+
+                <div role="group" class="field col-span-2 lg:col-span-1" data-campo="titular.celular"
+                  data-etiqueta="Celular">
+                  <label for="celular">Celular</label>
+                  <input id="celular" type="tel" autocomplete="tel-national" placeholder="11 5555-1234"
+                    aria-describedby="celular-error">
+                  <p id="celular-error" role="alert" data-error hidden class="text-xs text-red-600"></p>
+                </div>
+              </div>
+
+              <div role="group" class="field" data-campo="titular.terminos" data-etiqueta="Términos">
+                <label for="terminos" class="checkbox-label items-start gap-3 font-normal text-slate-500">
+                  <input id="terminos" type="checkbox" class="input mt-0.5" aria-describedby="terminos-error">
+                  <span class="text-[13px] leading-snug">Acepto los términos y condiciones y la política de
+                    privacidad.</span>
+                </label>
+                <p id="terminos-error" role="alert" data-error hidden class="text-xs text-red-600"></p>
+              </div>
+
+              <!-- Acciones -->
+              <div
+                class="fixed inset-x-0 bottom-0 z-10 flex flex-col gap-3 border-t border-slate-200 bg-white p-5 lg:static lg:mt-2 lg:flex-row lg:items-center lg:justify-between lg:bg-transparent lg:px-0 lg:pb-0 lg:pt-6">
+                <button type="button" class="btn hidden lg:inline-flex lg:w-40" data-variant="outline"
+                  data-accion="volver">Volver</button>
+                <div class="flex flex-col gap-3 lg:flex-row-reverse lg:items-center lg:gap-5">
+                  <button type="submit" class="btn w-full lg:w-60" data-accion-principal disabled><span
+                      data-etiqueta-boton>Continuar al pago</span></button>
+                  <p data-ayuda-boton hidden class="text-center text-xs text-slate-500 lg:text-right">
+                    <span data-texto></span>
+                    <button type="button" class="font-semibold text-indigo-600 underline"
+                      data-accion="mostrar-errores">Ver qué falta</button>
+                  </p>
+                </div>
+              </div>
+            </form>
+          </section>
+
+          <!-- Pantalla 05 · Pago (paso 4) -->
+          <section data-paso="4" hidden aria-label="Pago">
+            <form novalidate class="flex flex-col gap-4 lg:gap-5" aria-busy="false">
+
+              <!-- Medio de pago -->
+              <div role="radiogroup" aria-label="Medio de pago" data-campo="pago.metodo" data-etiqueta="Medio de pago"
+                class="grid gap-3 lg:grid-cols-2 lg:gap-4">
+                <label
+                  class="group flex cursor-pointer items-center gap-3 rounded-xl border-2 border-slate-200 bg-white p-4 has-[:checked]:border-indigo-600 has-[:focus-visible]:ring-4 has-[:focus-visible]:ring-indigo-200">
+                  <input type="radio" name="metodo" value="credito" class="sr-only">
+                  <span
+                    class="grid size-[22px] shrink-0 place-items-center rounded-full border-2 border-slate-300 group-has-[:checked]:border-indigo-600 group-has-[:checked]:bg-indigo-600"
+                    aria-hidden="true"><span
+                      class="size-2 rounded-full bg-white opacity-0 group-has-[:checked]:opacity-100"></span></span>
+                  <span class="text-[15px] font-semibold">Tarjeta de crédito</span>
+                </label>
+                <label
+                  class="group flex cursor-pointer items-center gap-3 rounded-xl border-2 border-slate-200 bg-white p-4 has-[:checked]:border-indigo-600 has-[:focus-visible]:ring-4 has-[:focus-visible]:ring-indigo-200">
+                  <input type="radio" name="metodo" value="debito" class="sr-only">
+                  <span
+                    class="grid size-[22px] shrink-0 place-items-center rounded-full border-2 border-slate-300 group-has-[:checked]:border-indigo-600 group-has-[:checked]:bg-indigo-600"
+                    aria-hidden="true"><span
+                      class="size-2 rounded-full bg-white opacity-0 group-has-[:checked]:opacity-100"></span></span>
+                  <span class="text-[15px] font-semibold">Tarjeta de débito</span>
+                </label>
+              </div>
+
+              <div class="grid grid-cols-2 gap-4 lg:gap-5">
+                <div role="group" class="field col-span-2 lg:col-span-1" data-campo="pago.tarjeta"
+                  data-etiqueta="Número de tarjeta">
+                  <label for="tarjeta">Número de tarjeta</label>
+                  <input id="tarjeta" type="text" inputmode="numeric" autocomplete="off"
+                    placeholder="4111 1111 1111 1111" aria-describedby="tarjeta-error">
+                  <p id="tarjeta-error" role="alert" data-error hidden class="text-xs text-red-600"></p>
+                </div>
+
+                <div role="group" class="field col-span-2 lg:col-span-1" data-campo="pago.titular"
+                  data-etiqueta="Titular">
+                  <label for="titular-tarjeta">Titular</label>
+                  <input id="titular-tarjeta" type="text" autocomplete="off" placeholder="Como figura en la tarjeta"
+                    aria-describedby="titular-tarjeta-error">
+                  <p id="titular-tarjeta-error" role="alert" data-error hidden class="text-xs text-red-600"></p>
+                </div>
+
+                <div role="group" class="field" data-campo="pago.vencimiento" data-etiqueta="Vencimiento">
+                  <label for="vencimiento">Vencimiento</label>
+                  <input id="vencimiento" type="text" inputmode="numeric" autocomplete="off" placeholder="MM/AA"
+                    aria-describedby="vencimiento-error">
+                  <p id="vencimiento-error" role="alert" data-error hidden class="text-xs text-red-600"></p>
+                </div>
+
+                <div role="group" class="field" data-campo="pago.cvv" data-etiqueta="CVV">
+                  <label for="cvv">CVV</label>
+                  <input id="cvv" type="password" inputmode="numeric" autocomplete="off" placeholder="•••"
+                    aria-describedby="cvv-error">
+                  <p id="cvv-error" role="alert" data-error hidden class="text-xs text-red-600"></p>
+                </div>
+              </div>
+
+              <!-- Aviso de simulación -->
+              <div class="alert rounded-xl border-amber-200 bg-amber-50 text-amber-800" role="note">
+                <section class="text-[13px] text-amber-800">Simulación: no se procesan pagos reales. Usá la tarjeta de
+                  prueba 4111 1111 1111 1111.</section>
+              </div>
+
+              <!-- Acciones -->
+              <div
+                class="fixed inset-x-0 bottom-0 z-10 flex flex-col gap-3 border-t border-slate-200 bg-white p-5 lg:static lg:mt-2 lg:flex-row lg:items-center lg:justify-between lg:bg-transparent lg:px-0 lg:pb-0 lg:pt-6">
+                <button type="button" class="btn hidden lg:inline-flex lg:w-40" data-variant="outline"
+                  data-accion="volver">Volver</button>
+                <div class="flex flex-col gap-3 lg:flex-row-reverse lg:items-center lg:gap-5">
+                  <button type="submit" class="btn w-full lg:w-60" data-accion-principal disabled>
+                    <svg data-spinner hidden class="size-4 animate-spin" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true">
+                      <path d="M21 12a9 9 0 1 1-6.219-8.56" />
+                    </svg>
+                    <span data-etiqueta-boton>Pagar y contratar</span>
+                  </button>
+                  <p data-ayuda-boton hidden class="text-center text-xs text-slate-500 lg:text-right">
+                    <span data-texto></span>
+                    <button type="button" class="font-semibold text-indigo-600 underline"
+                      data-accion="mostrar-errores">Ver qué falta</button>
+                  </p>
+                </div>
+              </div>
+            </form>
+          </section>
+
+        </div>
+
+        <!-- Resumen (card lateral en desktop / bloque en Pago mobile) -->
+        <div id="slot-resumen" class="max-lg:order-first">
+          <aside id="resumen" class="card max-lg:mb-4" aria-label="Resumen de tu solicitud">
+            <div class="rounded-2xl bg-indigo-50 p-[17px] lg:bg-white lg:p-6">
+              <h2 class="mb-4 hidden text-[17px] font-bold lg:block">Resumen</h2>
+              <dl class="flex flex-col gap-2.5 text-sm">
+                <div data-fila="seguro" class="flex justify-between gap-4">
+                  <dt class="text-slate-500">Seguro</dt>
+                  <dd data-valor class="text-right font-semibold"></dd>
+                </div>
+                <div data-fila="equipo" class="flex justify-between gap-4">
+                  <dt class="text-slate-500">Equipo</dt>
+                  <dd data-valor class="text-right font-semibold"></dd>
+                </div>
+                <div data-fila="valor" class="flex justify-between gap-4">
+                  <dt class="text-slate-500">Valor</dt>
+                  <dd data-valor class="text-right font-semibold"></dd>
+                </div>
+                <div data-fila="plan" class="flex justify-between gap-4">
+                  <dt class="text-slate-500">Plan</dt>
+                  <dd data-valor class="text-right font-semibold"></dd>
+                </div>
+                <div data-fila="titular" class="flex justify-between gap-4">
+                  <dt class="text-slate-500">Titular</dt>
+                  <dd data-valor class="text-right font-semibold"></dd>
+                </div>
+                <div data-fila="total"
+                  class="mt-1 flex items-baseline justify-between gap-4 border-t border-slate-300 pt-3">
+                  <dt class="text-slate-500">Total mensual</dt>
+                  <dd data-valor class="text-base font-extrabold lg:text-lg"></dd>
+                </div>
+              </dl>
+              <p data-resumen-aviso hidden class="mt-3 text-[13px] text-slate-500">Completá los datos del equipo para
+                ver los planes.</p>
+              <p class="mt-4 hidden items-center gap-2 text-xs text-slate-500 lg:flex">
+                <svg class="size-4 shrink-0 text-emerald-600" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path
+                    d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" />
+                </svg>
+                Contratación 100% online · cancelás cuando quieras
+              </p>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pantallas 06 y 07 -->
+    <div id="slot-resultado">
+      <!-- Pantalla 06 · Éxito (paso 5) -->
+      <section data-paso="5" hidden aria-labelledby="titulo-exito">
+        <div
+          class="mx-auto w-full max-w-[600px] px-5 pb-48 pt-20 text-center lg:mt-16 lg:rounded-2xl lg:border lg:border-slate-200 lg:bg-white lg:px-12 lg:pb-12 lg:pt-12">
+          <span
+            class="mx-auto grid size-24 place-items-center rounded-full bg-emerald-50 text-emerald-600 lg:size-[88px]">
+            <svg class="size-12 lg:size-11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M20 6 9 17l-5-5" />
+            </svg>
+          </span>
+          <h1 id="titulo-exito" class="mt-6 text-2xl font-extrabold leading-tight lg:text-[28px]">
+            ¡Listo, <span data-bind="nombre"></span>!<br>Tu celular ya está protegido
+          </h1>
+          <p class="mt-4 text-[15px] text-slate-500">Te enviamos la póliza a <span data-bind="email"></span></p>
+          <p class="mx-auto mt-5 w-fit rounded-xl bg-indigo-50 px-4 py-2.5 text-xl font-extrabold tracking-wide text-indigo-800"
+            data-bind="poliza"></p>
+
+          <dl
+            class="mt-5 flex flex-col gap-2.5 rounded-xl border border-slate-200 bg-white p-[17px] text-left text-sm lg:p-5">
+            <div class="flex justify-between">
+              <dt class="text-slate-500">Plan</dt>
+              <dd class="font-semibold" data-bind="plan"></dd>
+            </div>
+            <div class="flex justify-between">
+              <dt class="text-slate-500">Equipo</dt>
+              <dd class="font-semibold" data-bind="equipo"></dd>
+            </div>
+            <div class="flex justify-between">
+              <dt class="text-slate-500">Vigencia desde</dt>
+              <dd class="font-semibold" data-bind="vigencia"></dd>
+            </div>
+            <div class="flex justify-between">
+              <dt class="text-slate-500">Cuota mensual</dt>
+              <dd class="font-semibold" data-bind="cuota"></dd>
+            </div>
+          </dl>
+
+          <div
+            class="fixed inset-x-0 bottom-0 z-10 flex flex-col gap-3 border-t border-slate-200 bg-white p-5 lg:static lg:mt-6 lg:flex-row lg:border-0 lg:bg-transparent lg:p-0">
+            <button type="button" class="btn w-full lg:flex-1" data-accion="descargar-poliza">Descargar póliza</button>
+            <button type="button" class="btn w-full lg:flex-1" data-variant="ghost" data-accion="volver-inicio">Volver
+              al inicio</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Pantalla 07 · Error de pago (paso 6) -->
+      <section data-paso="6" hidden aria-labelledby="titulo-error">
+        <div
+          class="mx-auto w-full max-w-[600px] px-5 pb-48 pt-24 text-center lg:mt-16 lg:rounded-2xl lg:border lg:border-slate-200 lg:bg-white lg:px-12 lg:pb-12 lg:pt-12">
+          <span class="mx-auto grid size-24 place-items-center rounded-full bg-red-50 text-red-600 lg:size-[88px]">
+            <svg class="size-12 lg:size-11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M18 6 6 18" />
+              <path d="m6 6 12 12" />
+            </svg>
+          </span>
+          <h1 id="titulo-error" class="mt-6 text-2xl font-extrabold leading-tight">No pudimos procesar el pago</h1>
+          <p class="mt-4 text-[15px] leading-relaxed text-slate-500" role="alert">
+            <strong class="text-slate-900" data-bind="motivo"></strong>. Revisá los datos o probá con otro medio de
+            pago. Tus datos quedaron guardados.
+          </p>
+
+          <div class="alert mt-5 rounded-xl border-amber-200 bg-amber-50 text-left" role="note">
+            <section class="text-[13px] text-amber-800">Tarjeta de prueba que fuerza el error: 4000 0000 0000 0002
+            </section>
+          </div>
+
+          <div
+            class="fixed inset-x-0 bottom-0 z-10 flex flex-col gap-3 border-t border-slate-200 bg-white p-5 lg:static lg:mt-6 lg:flex-row lg:border-0 lg:bg-transparent lg:p-0">
+            <button type="button" class="btn w-full lg:flex-1" data-accion="reintentar">Reintentar pago</button>
+            <button type="button" class="btn w-full lg:flex-1" data-variant="outline"
+              data-accion="cambiar-medio">Cambiar medio de pago</button>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+</body>
+
+</html>

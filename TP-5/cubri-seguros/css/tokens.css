@@ -1,0 +1,18 @@
+/* Tokens del diseño (sección 3.4 del TP). Basecoat lee --primary y --radius. */
+:root {
+  --primary: #4F46E5;            /* indigo-600 */
+  --primary-foreground: #FFFFFF;
+  --radius: 0.75rem;
+
+  --primary-700: #3730A3;        /* indigo-800 */
+  --primary-50: #EEF2FF;         /* indigo-50 */
+  --success: #059669;            /* emerald-600 */
+  --error: #DC2626;              /* red-600 */
+  --text: #0F172A;               /* slate-900 */
+  --muted: #64748B;              /* slate-500 */
+  --border: #E2E8F0;             /* slate-200 */
+  --bg: #F5F7FB;
+}
+
+html { font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif; }
+body { background: var(--bg); color: var(--text); }
