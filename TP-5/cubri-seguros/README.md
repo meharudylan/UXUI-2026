@@ -68,4 +68,26 @@ Para agregar un campo: ponerlo en `index.html` con `data-campo="..."`, agregarlo
 
 ## Capturas
 
-_Agregar capturas mobile (390 px) y desktop (1440 px) de las 7 pantallas en `/capturas` y enlazarlas acá._
+### Desktop (1440 px)
+
+| Pantalla | Vista |
+|---|---|
+| 01 · Inicio | ![Inicio desktop](images-desktop/01-inicio.png) |
+| 02 · Cotizar | ![Cotizar desktop](images-desktop/02-cotizar.png) |
+| 03 · Planes | ![Planes desktop](images-desktop/03-planes.png) |
+| 04 · Datos personales | ![Datos desktop](images-desktop/04-datos.png) |
+| 05 · Pago | ![Pago desktop](images-desktop/05-pago.png) |
+| 06 · Éxito | ![Éxito desktop](images-desktop/06-exito.png) |
+| 07 · Error de pago | ![Error desktop](images-desktop/07-error.png) |
+
+### Mobile (390 px)
+
+| Pantalla | Vista |
+|---|---|
+| 01 · Inicio | ![Inicio mobile](images-mobile/01-inicio.png) |
+| 02 · Cotizar | ![Cotizar mobile](images-mobile/02-cotizar.png) |
+| 03 · Planes | ![Planes mobile](images-mobile/03-planes.png) |
+| 04 · Datos personales | ![Datos mobile](images-mobile/04-datos.png) |
+| 05 · Pago | ![Pago mobile](images-mobile/05-pago.png) |
+| 06 · Éxito | ![Éxito mobile](images-mobile/06-exito.png) |
+| 07 · Error de pago | ![Error mobile](images-mobile/07-error.png) |
