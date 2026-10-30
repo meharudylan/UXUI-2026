@@ -3,12 +3,12 @@
 TP5 · Diseño UXUI 2026 · Lic. en Sistemas de Información (FCyT).
 Stack: HTML5 · Tailwind CSS v4 (CDN) · Basecoat UI · JavaScript vanilla (módulos ES). Sin backend.
 
-- **Sitio publicado:** _pegar URL acá_
-- **Figma:** _pegar link acá_
+- **Sitio publicado:** https://seguroscubri.netlify.app/
+- **Figma:** https://www.figma.com/design/vJrfOUfiOI7OSeTtRfCloh
 
 ## Cómo correrlo
 
-No hace falta compilar nada, pero **no se puede abrir con doble click** (`file://`): el navegador bloquea los `fetch` de `data/planes.json` y `partials/`.
+No hace falta compilar nada, pero **no se puede abrir con doble click** (`file://`): el navegador bloquea el `fetch` de `data/planes.json`.
 
 ```bash
 npx serve .          # o "Live Server" en VS Code
@@ -41,7 +41,7 @@ Piezas compartidas:
 - `js/componentes/formulario.js`: motor de formularios. Cualquier elemento con `data-campo="seccion.campo"` queda conectado al estado, se valida en `blur` y muestra su error.
 - `css/tokens.css` (tokens del Figma) · `css/ajustes.css` (retoques sobre Basecoat) · `css/layout.css` (qué se ve en mobile/desktop según el paso).
 
-Para agregar un campo: ponerlo en el partial con `data-campo="..."`, agregarlo al estado (`estado.js`) y registrar su validador en `validaciones.js`.
+Para agregar un campo: ponerlo en `index.html` con `data-campo="..."`, agregarlo al estado (`estado.js`) y registrar su validador en `validaciones.js`.
 
 ## Decisiones tomadas
 
@@ -59,12 +59,12 @@ Para agregar un campo: ponerlo en el partial con `data-campo="..."`, agregarlo a
 - Máscaras de input: tarjeta en grupos de 4, vencimiento con barra automática, DNI y CVV solo dígitos.
 - "Descargar póliza" genera un `.txt` con el detalle.
 
-## Commits sugeridos (uno por hito)
+## Commits por hito
 
-1. `H1: maquetado de las 7 pantallas (mobile y desktop)`
-2. `H2: estado único, render, stepper y navegación con "Volver"`
-3. `H3: validaciones en línea, planes.json y cálculo de cuotas`
-4. `H4: pago simulado, éxito/error, póliza, README y deploy`
+1. `feat(tp5-h1): maquetado de las 7 pantallas (mobile y desktop)`
+2. `feat(tp5-h2): estado unico, render, stepper y navegacion`
+3. `feat(tp5-h3): validaciones en linea, planes.json y calculo de cuotas`
+4. `feat(tp5-h4): pago simulado, exito/error, poliza y documentacion`
 
 ## Capturas
 
